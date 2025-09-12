@@ -1,7 +1,7 @@
 export default function Trust() {
     return (
         <section className="pt-8 pb-18" >
-            <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-10 md:px-16 lg:px-6">
                 <div>
                     <h2 className="text-2xl font-bold text-gray-900">Safety & transparency</h2>
                     <ul className="mt-3 list-disc pl-6">

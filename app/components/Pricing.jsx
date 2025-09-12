@@ -1,7 +1,7 @@
 export default function Pricing() {
     return (
         <section className="py-12">
-            <div className="max-w-6xl mx-auto px-6 ">
+            <div className="max-w-6xl mx-auto px-10 md:px-16 lg:px-6">
 
                 <h2 className="text-2xl font-bold text-gray-900">Transparent pricing</h2>
                 <p className="text-gray-500 mt-2">
