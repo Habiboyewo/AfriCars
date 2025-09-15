@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import ThemeButton from "./ThemeButton";
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
@@ -47,7 +48,8 @@ export default function Navbar() {
                     <Link href="#trust" className="border border-gray-300 rounded-xl px-4 py-1 font-semibold">Trust</Link>
                     <Link href="#contact" className="border border-gray-300 rounded-xl px-4 py-1 font-semibold">Contact</Link>
                     <Link href="https://www.instagram.com/myafricars" className="border border-gray-300 rounded-xl px-4 py-1 font-semibold">Instagram</Link>
-                    <button className="border border-gray-300 rounded-xl px-4 py-1 font-semibold">Theme</button>
+                    {/* <button className="border border-gray-300 rounded-xl px-4 py-1 font-semibold">Theme</button> */}
+                    <ThemeButton />
                     <Link href="tel:+2347013502404" className="border border-gray-300 rounded-xl px-4 py-1 font-semibold text-[#2bd889]">Call</Link>
                     <Link href="https://wa.me/2347013502404" className="border border-gray-300 rounded-xl px-4 py-1 font-semibold text-[#2bd889]">Whatsapp</Link>
                 </nav>
@@ -56,15 +58,16 @@ export default function Navbar() {
 
             {open && (
                 <div className="lg:hidden bg-white shadow px-4 py-3 space-y-2 pl-8">
-                    <Link href="#book" onClick={() => setOpen(false)}  className=" font-semibold block mb-4">Book</Link>
-                    <Link href="#pricing" onClick={() => setOpen(false)}  className=" font-semibold block mb-4">Pricing</Link>
-                    <Link href="#trust" onClick={() => setOpen(false)}  className=" font-semibold block mb-4">Trust</Link>
-                    <Link href="#contact" onClick={() => setOpen(false)}  className=" font-semibold block mb-4">Contact</Link>
-                    <Link href="https://www.instagram.com/myafricars" onClick={() => setOpen(false)}  className=" mb-4 font-semibold block">Instagram</Link>
-                    <button onClick={() => setOpen(false)}  className=" font-semibold mb-4">Theme</button>
-                    <Link href="tel:+2347013502404" onClick={() => setOpen(false)}  className=" mb-4 font-semibold text-[#2bd889] block">Call</Link>
-                    <Link href="https://wa.me/2347013502404" onClick={() => setOpen(false)}  className=" mb-4 font-semibold text-[#2bd889] block">Whatsapp</Link>
-                    
+                    <Link href="#book" onClick={() => setOpen(false)} className=" font-semibold block mb-4">Book</Link>
+                    <Link href="#pricing" onClick={() => setOpen(false)} className=" font-semibold block mb-4">Pricing</Link>
+                    <Link href="#trust" onClick={() => setOpen(false)} className=" font-semibold block mb-4">Trust</Link>
+                    <Link href="#contact" onClick={() => setOpen(false)} className=" font-semibold block mb-4">Contact</Link>
+                    <Link href="https://www.instagram.com/myafricars" onClick={() => setOpen(false)} className=" mb-4 font-semibold block">Instagram</Link>
+                    {/* <button onClick={() => setOpen(false)}  className=" font-semibold mb-4">Theme</button> */}
+                    <ThemeButton />
+                    <Link href="tel:+2347013502404" onClick={() => setOpen(false)} className=" mb-4 font-semibold text-[#2bd889] block">Call</Link>
+                    <Link href="https://wa.me/2347013502404" onClick={() => setOpen(false)} className=" mb-4 font-semibold text-[#2bd889] block">Whatsapp</Link>
+
                 </div>
             )}
         </header>

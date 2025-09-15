@@ -1,6 +1,7 @@
 "use client";
 import { Field, ErrorMessage, useFormikContext } from "formik";
 import * as Yup from "yup";
+import { Prices } from "../../utilis/prices";
 
 export const step3Schema = Yup.object({
   name: Yup.string().required("Your name is required"),
@@ -10,16 +11,43 @@ export const step3Schema = Yup.object({
   notes: Yup.string(),
 });
 
+
+function computePrice(service, unit, qty) {
+  const match = Prices.find((p) => p.title === service);
+  const base = match?.value;
+  
+  if (!base || !qty) return null;
+
+  let multiplier = qty;
+  if (unit === "weeks") multiplier = 7 * qty;
+  if (unit === "months") multiplier = 30 * qty;
+
+  let gross = base * multiplier;
+  let discount = 0;
+
+  if (unit === "weeks") discount = 0.25;
+  if (unit === "months") discount = 0.4;
+
+  const finalPrice = Math.round(gross * (1 - discount));
+  return { finalPrice, discounted: discount > 0 }; // 
+}
+
 export default function ThirdForm() {
   const { values } = useFormikContext();
+
+  const priceData = computePrice(
+    values.service,
+    values.durationUnit,
+    values.durationQty
+  );
 
   return (
     <div>
       <h2 className="text-medium font-bold mb-4">Your Details</h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-        <div>
-          <label className="text-sm">Name</label>
+        <div className="text-sm">
+          <label >Name</label>
           <Field
             name="name"
             placeholder="Your name"
@@ -31,13 +59,13 @@ export default function ThirdForm() {
             component="p"
             className="text-red-500 text-sm"
           />
-        </div >
+        </div>
         <div className="text-sm">
           <label>Phone</label>
           <Field
             name="phone"
             placeholder="+234-701-350-2404"
-          className="text-sm w-full p-2 border border-gray-300 rounded-lg 
+            className="text-sm w-full p-2 border border-gray-300 rounded-lg 
               focus:outline-none focus:ring-2 focus:ring-[#2bd889]"
           />
           <ErrorMessage
@@ -49,7 +77,7 @@ export default function ThirdForm() {
       </div>
 
       <div className="mb-4 text-sm">
-        <label >Notes (flights no., special requests)</label>
+        <label>Notes (flights no., special requests)</label>
         <Field
           as="textarea"
           name="notes"
@@ -59,7 +87,7 @@ export default function ThirdForm() {
         />
       </div>
 
-      <div className="p-4 border rounded-lg bg-gray-50 text-sm">
+      <div className="p-4 border border-dotted border-gray-200 rounded-lg bg-gray-100 text-sm">
         <p>
           <strong>Service:</strong> {values.service}
         </p>
@@ -74,8 +102,16 @@ export default function ThirdForm() {
           <strong>Duration:</strong> {values.durationQty} {values.durationUnit}
         </p>
         <p>
-          <strong>Contact:</strong> {values.name}, {values.phone}
+          <strong>Contact:</strong> {values.name} • {values.phone}
         </p>
+
+        {/* price info */}
+        {priceData && (
+          <p className="font-semibold">
+            Price: ₦{priceData.finalPrice.toLocaleString()}
+            {priceData.discounted && " (discounted)"}
+          </p>
+        )}
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import BookingForm from "./bookingFormsComponents/BookingForm";
 export default function BookingSection() {
     return (
         <section>
-            <div className="max-w-6xl mx-auto mt-10 px-10 md:px-16 lg:px-6 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2  gap-8 items-center">
+            <div className="max-w-6xl mx-auto mt-15 mb-10 px-10 md:px-16 lg:px-6 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2  gap-8 items-center">
                 <div className="md:col-span-2 lg:col-span-1">
                     <BookingForm />
                 </div>

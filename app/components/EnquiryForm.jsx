@@ -36,12 +36,12 @@ export default function EnquiryForm() {
     });
 
     return (
-        <section className="p-6 border border-gray-200 rounded-2xl bg-white shadow-xl mx-8 sm:mx-20 md:mx-0">
+        <section className=" p-6 border border-gray-200 rounded-2xl bg-white shadow-xl mx-8 sm:mx-20 md:mx-0">
             <h2 className="text-2xl font-bold mb-6 text-center">Quick enquiry</h2>
 
             <form
                 onSubmit={formik.handleSubmit}
-                className="flex flex-col items-center space-y-6"
+                className="flex flex-col items-center space-y-6 "
             >
 
                 <div className="w-full sm:max-w-md">
