@@ -45,17 +45,17 @@ export default function BookingForm() {
     };
 
     return (
-        <div className="max-w-xl p-4 pb-6 border border-gray-200 rounded-2xl bg-white shadow-xl">
+        <div className="max-w-xl p-4 pb-6 border border-gray-200 rounded-2xl bg-white shadow-xl dark:bg-[#ffffff14] dark:border-gray-600">
           
             <h1 className="text-xl font-bold ">Book your ride</h1>
-            <p className="text-gray-500  mb-3 text-sm">
-                <span>Secure</span> • <span>Comfortable</span> • <span>On-time</span>
+            <p className="text-gray-500  mb-3 text-sm dark:text-gray-300">
+                <span >Secure</span> • <span>Comfortable</span> • <span>On-time</span>
             </p>
 
             {/* Progress bar */}
-            <div className="w-full bg-gray-600 h-2 rounded-full mb-2">
+            <div className="w-full bg-gray-600 h-2 rounded-full mb-2 ">
                 <div
-                    className="h-2 bg-[#0b8a5a] rounded-full transition-all"
+                    className="h-2 bg-[#0b8a5a] rounded-full transition-all "
                     style={{ width: `${((step + 1) / steps.length) * 100}%` }}
                 ></div>
             </div>
@@ -86,7 +86,7 @@ export default function BookingForm() {
                                             setTouched(touchedFields);
                                         }
                                     }}
-                                    className={`border-gray-300 w-40 h-7 rounded-2xl border flex items-center justify-center 
+                                    className={`border-gray-300 w-40 h-7 rounded-2xl border flex items-center justify-center dark:border-gray-600 
                     ${step === index
                                             ? "ring-2 ring-[#2bd889]"
                                             : " hover:bg-gray-100"
@@ -112,7 +112,7 @@ export default function BookingForm() {
                                             setStep(step - 1);
                                         }
                                     }}
-                                    className={`px-3 py-2 border-gray-300 rounded-xl border font-semibold ${step === 0 ? "bg-gray-100 text-gray-400 cursor-not-allowed" : ""
+                                    className={`px-3 py-2 border-gray-300 rounded-xl border font-semibold dark:bg-[#ffffff0f] dark:border-gray-600 dark:text-gray-200 ${step === 0 ? "bg-gray-100 text-gray-400 cursor-not-allowed" : ""
                                         }`}
                                 >
                                     Back
@@ -137,8 +137,8 @@ export default function BookingForm() {
                                             }
                                         }
                                     }}
-                                    className={`px-3 py-2 border-gray-300 rounded-xl border font-semibold bg-[#2bd889] ${step === steps.length - 1
-                                        ? "bg-gray-100 cursor-not-allowed"
+                                    className={`px-3 py-2 border-gray-300 rounded-xl border font-semibold bg-[#2bd889] border font-semibold dark:border-gray-600 dark:text-black ${step === steps.length - 1
+                                        ? "bg-gray-100 cursor-not-allowed  dark:bg-[#ffffff0f] dark:border-gray-600 dark:text-gray-200"
                                         : " "
                                         }`}
                                 >
@@ -162,7 +162,7 @@ export default function BookingForm() {
                                             setTouched(touchedFields);
                                         }
                                     }}
-                                    className={`px-4 py-2 rounded-xl border border-gray-300 font-semibold bg-[#2bd889] ${step !== steps.length - 1
+                                    className={`px-4 py-2 rounded-xl border border-gray-300 font-semibold bg-[#2bd889] dark:bg-[#2bd889] dark:border-gray-600 dark:text-black ${step !== steps.length - 1
                                         ? "bg-gray-100 text-gray-400 cursor-not-allowed"
                                         : " "
                                         }`}

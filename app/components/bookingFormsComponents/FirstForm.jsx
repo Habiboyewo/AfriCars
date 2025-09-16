@@ -39,18 +39,18 @@ export default function FirstForm() {
         setFieldValue("destination", prevPickup || "");
     };
 
-    
+
     const inputClasses =
-        "input text-sm w-full p-2 border border-black rounded-xl focus:ring-2 focus:ring-[#2bd889] focus:border-black focus:outline-none border-gray-300";
+        "input text-sm w-full p-2 border border-black rounded-xl focus:ring-2 focus:ring-[#2bd889] focus:border-black focus:outline-none border-gray-300 dark:border-gray-600 ";
 
     return (
-        <div>
+        <div >
             <h2 className="text-medium font-bold mb-2">Service & Route</h2>
 
-            
+
             <div className="relative mb-2 pr-20 ">
                 <div className="flex gap-3">
-                    
+
                     <div className="flex-1">
                         <label className="block mb-1">Service</label>
                         <Field as="select" name="service" className={inputClasses}>
@@ -69,13 +69,13 @@ export default function FirstForm() {
                             className="text-red-500 text-sm mt-1"
                         />
 
-                        
+
                         <FieldArray name="stops">
                             {({ push }) => (
                                 <button
                                     type="button"
                                     onClick={() => push("")}
-                                    className="px-2 py-1 mt-1 border rounded-lg bg-white hover:bg-gray-100 text-sm border-gray-300 font-semibold"
+                                    className="px-2 py-1 mt-1 border rounded-lg bg-white hover:bg-gray-100 text-sm border-gray-300 font-semibold dark:bg-[#ffffff0f] dark:border-gray-600 dark:text-gray-200"
                                 >
                                     + Add stop
                                 </button>
@@ -83,7 +83,7 @@ export default function FirstForm() {
                         </FieldArray>
                     </div>
 
-                    
+
                     <div className="flex-1">
                         <label className="block mb-1">Pickup</label>
                         <Field
@@ -104,17 +104,17 @@ export default function FirstForm() {
                         />
                     </div>
                 </div>
-
                 <button
                     type="button"
                     onClick={handleSwap}
-                    className="absolute top-1/2 right-0 -translate-y-1/2 px-2 py-1 border rounded-lg bg-white hover:bg-gray-100 text-sm border-gray-300 font-semibold"
+                    className="absolute top-1/2 right-0 -translate-y-1/2 px-2 py-1 border rounded-lg bg-white hover:bg-gray-100 text-sm border-gray-300 font-semibold dark:bg-[#ffffff0f] dark:border-gray-600 dark:text-gray-200"
                 >
                     ⇅ Swap
                 </button>
+
             </div>
 
-          
+
             <div className="mb-4">
                 <label className="block mb-1">Destination</label>
                 <Field
@@ -135,7 +135,7 @@ export default function FirstForm() {
                 />
             </div>
 
-          
+
             <FieldArray name="stops">
                 {({ remove }) => (
                     <div className="space-y-2">
@@ -156,7 +156,7 @@ export default function FirstForm() {
                                     <button
                                         type="button"
                                         onClick={() => remove(index)}
-                                        className="px-3 py-1 text-sm text-red-600 border rounded-md hover:bg-red-50"
+                                        className="px-3 py-1 text-sm text-red-600 border rounded-md hover:bg-red-50  dark:hover:bg-[#ffffff0f] "
                                     >
                                         Remove
                                     </button>

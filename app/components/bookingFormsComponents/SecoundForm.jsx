@@ -25,7 +25,7 @@ export default function SecoundForm() {
     <div>
       <h2 className="text-medium font-bold mb-2">When & Duration</h2>
 
-      
+
       <div className="mb-4">
         <label className="block mb-1 text-sm">When</label>
         <div className="flex gap-2">
@@ -34,7 +34,7 @@ export default function SecoundForm() {
               type="button"
               key={opt}
               onClick={() => setFieldValue("when", opt)}
-              className={`px-3 py-1 rounded-lg border border-gray-300 bg-white text-gray-800 
+              className={`px-3 py-1 rounded-lg border border-gray-300 bg-white text-gray-800 dark:bg-[#ffffff0f] dark:border-gray-600 dark:text-gray-200 
                 ${values.when === opt ? "ring-2 ring-[#2bd889]" : ""}`}
             >
               {opt}
@@ -43,7 +43,7 @@ export default function SecoundForm() {
         </div>
       </div>
 
-      
+
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4 text-sm">
         <div>
           <label>Date</label>
@@ -51,7 +51,7 @@ export default function SecoundForm() {
             type="date"
             name="date"
             disabled={values.when === "ASAP"}
-            className="input text-sm w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2bd889] disabled:bg-gray-100 disabled:cursor-not-allowed"
+            className="input text-sm w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2bd889] disabled:bg-gray-100 disabled:cursor-not-allowed dark:border-gray-600 dark:disabled:bg-[#0c0f14]"
           />
           <ErrorMessage
             name="date"
@@ -65,7 +65,7 @@ export default function SecoundForm() {
             type="time"
             name="time"
             disabled={values.when === "ASAP"}
-            className="input text-sm w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2bd889] disabled:bg-gray-100 disabled:cursor-not-allowed"
+            className="input text-sm w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2bd889] disabled:bg-gray-100 disabled:cursor-not-allowed dark:border-gray-600 dark:disabled:bg-[#0c0f14]"
           />
           <ErrorMessage
             name="time"
@@ -82,7 +82,7 @@ export default function SecoundForm() {
           <Field
             as="select"
             name="durationUnit"
-            className="input text-sm w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2bd889]"
+            className="input text-sm w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2bd889] dark:border-gray-600"
           >
             <option value="days">Days</option>
             <option value="weeks">Weeks (25% off)</option>
@@ -100,7 +100,7 @@ export default function SecoundForm() {
             type="number"
             name="durationQty"
             min="1"
-            className="input text-sm w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2bd889]"
+            className="input text-sm w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2bd889] dark:border-gray-600"
           />
           <ErrorMessage
             name="durationQty"
@@ -110,7 +110,7 @@ export default function SecoundForm() {
         </div>
       </div>
 
-     
+
     </div>
   );
 }

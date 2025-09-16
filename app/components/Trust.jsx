@@ -1,9 +1,9 @@
 export default function Trust() {
     return (
-        <section className="pt-8 pb-18" >
+        <section className="pt-8 pb-18 " id="trust">
         <div className="max-w-6xl mx-auto px-10 md:px-16 lg:px-6">
                 <div>
-                    <h2 className="text-2xl font-bold text-gray-900">Safety & transparency</h2>
+                    <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Safety & transparency</h2>
                     <ul className="mt-3 list-disc pl-6">
                         <li className="pt-1 text-sm">Daily vehicle checks, in‑date insurance & papers</li>
                         <li className="pt-1 text-sm">Uniformed drivers • No cash‑gift policy</li>

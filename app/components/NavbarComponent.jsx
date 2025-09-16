@@ -9,7 +9,7 @@ export default function Navbar() {
     const [open, setOpen] = useState(false);
 
     return (
-        <header className="sticky top-0 z-50 bg-white shadow">
+        <header className="sticky top-0 z-50 bg-white shadow dark:bg-[#0c0f14]">
             <div className="max-w-6xl mx-auto flex items-center px-4 py-4">
 
                 <button
@@ -37,21 +37,20 @@ export default function Navbar() {
                         height={32}
                         priority
                     />
-                    <span className="ml-2 font-bold text-lg text-gray-900">AfriCars</span>
+                    <span className="ml-2 font-bold text-lg ">AfriCars</span>
                 </Link>
 
 
                 <nav className="hidden lg:flex  flex-1 justify-center gap-4">
 
-                    <Link href="#book" className="border border-gray-300 rounded-xl px-4 py-1 font-semibold">Book</Link>
-                    <Link href="#pricing" className="border border-gray-300 rounded-xl px-4 py-1 font-semibold">Pricing</Link>
-                    <Link href="#trust" className="border border-gray-300 rounded-xl px-4 py-1 font-semibold">Trust</Link>
-                    <Link href="#contact" className="border border-gray-300 rounded-xl px-4 py-1 font-semibold">Contact</Link>
-                    <Link href="https://www.instagram.com/myafricars" className="border border-gray-300 rounded-xl px-4 py-1 font-semibold">Instagram</Link>
-                    {/* <button className="border border-gray-300 rounded-xl px-4 py-1 font-semibold">Theme</button> */}
+                    <Link href="#book" id="BookingSection" className="border border-gray-300 rounded-xl px-4 py-1 font-semibold dark:border-gray-600">Book</Link>
+                    <Link href="#pricing" className="border border-gray-300 rounded-xl px-4 py-1 font-semibold dark:border-gray-600">Pricing</Link>
+                    <Link href="#trust"  className="border border-gray-300 rounded-xl px-4 py-1 font-semibold dark:border-gray-600">Trust</Link>
+                    <Link href="#contact" className="border border-gray-300 rounded-xl px-4 py-1 font-semibold dark:border-gray-600">Contact</Link>
+                    <Link href="https://www.instagram.com/myafricars" className="border border-gray-300 rounded-xl px-4 py-1 font-semibold dark:border-gray-600">Instagram</Link>
                     <ThemeButton />
-                    <Link href="tel:+2347013502404" className="border border-gray-300 rounded-xl px-4 py-1 font-semibold text-[#2bd889]">Call</Link>
-                    <Link href="https://wa.me/2347013502404" className="border border-gray-300 rounded-xl px-4 py-1 font-semibold text-[#2bd889]">Whatsapp</Link>
+                    <Link href="tel:+2347013502404" className="border rounded-xl px-4 py-1 font-semibold text-[#2bd889]">Call +234-701-350-2404 </Link>
+                    <Link href="https://wa.me/2347013502404" className="border rounded-xl px-4 py-1 font-semibold text-[#2bd889]">Whatsapp</Link>
                 </nav>
             </div>
 
@@ -65,7 +64,7 @@ export default function Navbar() {
                     <Link href="https://www.instagram.com/myafricars" onClick={() => setOpen(false)} className=" mb-4 font-semibold block">Instagram</Link>
                     {/* <button onClick={() => setOpen(false)}  className=" font-semibold mb-4">Theme</button> */}
                     <ThemeButton />
-                    <Link href="tel:+2347013502404" onClick={() => setOpen(false)} className=" mb-4 font-semibold text-[#2bd889] block">Call</Link>
+                    <Link href="tel:+2347013502404" onClick={() => setOpen(false)} className=" mb-4 font-semibold text-[#2bd889] block">Call +234-701-350-2404 </Link>
                     <Link href="https://wa.me/2347013502404" onClick={() => setOpen(false)} className=" mb-4 font-semibold text-[#2bd889] block">Whatsapp</Link>
 
                 </div>

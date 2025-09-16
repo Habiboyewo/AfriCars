@@ -15,7 +15,7 @@ export const step3Schema = Yup.object({
 function computePrice(service, unit, qty) {
   const match = Prices.find((p) => p.title === service);
   const base = match?.value;
-  
+
   if (!base || !qty) return null;
 
   let multiplier = qty;
@@ -52,7 +52,7 @@ export default function ThirdForm() {
             name="name"
             placeholder="Your name"
             className="text-sm w-full p-2 border border-gray-300 rounded-lg 
-              focus:outline-none focus:ring-2 focus:ring-[#2bd889]"
+              focus:outline-none focus:ring-2 focus:ring-[#2bd889] dark:border-gray-600"
           />
           <ErrorMessage
             name="name"
@@ -66,7 +66,7 @@ export default function ThirdForm() {
             name="phone"
             placeholder="+234-701-350-2404"
             className="text-sm w-full p-2 border border-gray-300 rounded-lg 
-              focus:outline-none focus:ring-2 focus:ring-[#2bd889]"
+              focus:outline-none focus:ring-2 focus:ring-[#2bd889] dark:border-gray-600"
           />
           <ErrorMessage
             name="phone"
@@ -83,11 +83,11 @@ export default function ThirdForm() {
           name="notes"
           rows={3}
           className="text-sm w-full p-2 border border-gray-300 rounded-lg 
-            focus:outline-none focus:ring-2 focus:ring-[#2bd889]"
+            focus:outline-none focus:ring-2 focus:ring-[#2bd889] dark:border-gray-600"
         />
       </div>
 
-      <div className="p-4 border border-dotted border-gray-200 rounded-lg bg-gray-100 text-sm">
+      <div className="p-4 border border-dotted border-gray-200 rounded-lg bg-gray-100 text-sm dark:bg-[#ffffff14] dark:border-gray-600">
         <p>
           <strong>Service:</strong> {values.service}
         </p>

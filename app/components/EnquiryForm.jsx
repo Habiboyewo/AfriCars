@@ -36,7 +36,7 @@ export default function EnquiryForm() {
     });
 
     return (
-        <section className=" p-6 border border-gray-200 rounded-2xl bg-white shadow-xl mx-8 sm:mx-20 md:mx-0">
+        <section id="contact"  className=" p-6 border border-gray-200 rounded-2xl bg-white shadow-xl mx-8 sm:mx-20 md:mx-0 dark:bg-[#ffffff14] dark:border-gray-600">
             <h2 className="text-2xl font-bold mb-6 text-center">Quick enquiry</h2>
 
             <form
@@ -47,7 +47,7 @@ export default function EnquiryForm() {
                 <div className="w-full sm:max-w-md">
                     <label
                         htmlFor="name"
-                        className="block text-sm font-medium text-gray-700"
+                        className="block text-sm font-medium text-gray-700 dark:text-gray-200"
                     >
                         Name
                     </label>
@@ -59,7 +59,7 @@ export default function EnquiryForm() {
                         value={formik.values.name}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                        className="mt-1 w-full border rounded-xl px-3 py-2 text-sm"
+                        className="mt-1 w-full border rounded-xl px-3 py-2 text-sm dark:border-gray-600"
                     />
                     {formik.touched.name && formik.errors.name && (
                         <p className="text-red-600 text-sm mt-1">{formik.errors.name}</p>
@@ -70,7 +70,7 @@ export default function EnquiryForm() {
                 <div className="w-full sm:max-w-md">
                     <label
                         htmlFor="phone"
-                        className="block text-sm font-medium text-gray-700"
+                        className="block text-sm font-medium text-gray-700 dark:text-gray-200"
                     >
                         Phone Number
                     </label>
@@ -82,7 +82,7 @@ export default function EnquiryForm() {
                         value={formik.values.phone}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                        className="mt-1 w-full border rounded-xl px-3 py-2 text-sm"
+                        className="mt-1 w-full border rounded-xl px-3 py-2 text-sm dark:border-gray-600"
                     />
                     {formik.touched.phone && formik.errors.phone && (
                         <p className="text-red-600 text-sm mt-1">{formik.errors.phone}</p>
